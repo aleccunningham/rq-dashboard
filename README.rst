@@ -1,6 +1,14 @@
 Introduction
 ============
 
+```
+$ docker run -d -p 3123:3123 --name rq-dashboard \
+    -e RQ_DASHBOARD_USERNAME=$user \
+    -e RQ_DASHBOARD_PASSWORD=$password \
+    -e RQ_DASHBOARD_REDIS_URL=redis://redis:6379/0 \
+    r.alec.cx/rq-dashboard -p 3123 -u $user $password
+```
+
 ``rq-dashboard`` is a general purpose, lightweight, `Flask`_-based web
 front-end to monitor your `RQ`_ queues, jobs, and workers in realtime.
 
